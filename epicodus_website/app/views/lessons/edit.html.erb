@@ -1,0 +1,18 @@
+<h1> Update Lesson </h1>
+
+<% if @lesson.errors.any? %>
+<h3>Please fix these errors:</h3>
+
+<ul>
+ <%  @lesson.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+</ul>
+<% end %>
+
+  <%= form_for @lesson do |q| %>
+    <%= q.text_field :name, placeholder: "Lesson Name" %> <br><br>
+    <%= q.label :content %> <br>
+    <%= q.text_area :content, size: "120x20"%> <br><br>
+    <%= q.submit %>
+  <% end %>
