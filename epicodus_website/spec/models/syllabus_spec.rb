@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Lesson do
+describe Syllabus do
   it { should validate_presence_of :name}
-  it { should belong_to :syllabus }
+  it { should have_many :lessons}
 end

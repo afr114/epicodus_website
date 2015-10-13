@@ -1,13 +1,3 @@
-<h1> Add Lesson </h1>
+<h1> Add Lesson for <%= @syllabus.name %> </h1>
 
-<ul>
-
-  <%= form_for @lesson do |q| %>
-    <%= q.text_field :name, placeholder: "Lesson Name" %> <br><br>
-    <%= q.label :content %> <br>
-    <%= q.text_area :content, size: "120x20"%> <br><br>
-    <%= q.submit %>
-  <% end %>
-
-
-<ul>
+  <%= render "form" %>

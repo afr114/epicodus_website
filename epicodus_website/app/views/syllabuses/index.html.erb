@@ -1,0 +1,9 @@
+<h1>Table of Contents</h1>
+
+<ul>
+
+  <% @syllabuses.each do |syllabus| %>
+  <li>  <%= link_to syllabus.name, syllabus_path(syllabus) %> </li>
+  <% end %>
+
+</ul>

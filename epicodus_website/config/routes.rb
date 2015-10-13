@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  resources :lessons
+  resources :syllabuses do
+    resources :lessons
+  end
 end

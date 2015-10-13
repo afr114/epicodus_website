@@ -1,0 +1,20 @@
+<h1> <%= @syllabus.name %></h1>
+
+<% if @syllabus.lessons.any? %>
+  <h4>Here are the lessons for this section:</h4>
+
+  <ul>
+  <% @syllabus.lessons.each do |lesson| %>
+    <li>
+      <%= lesson.name %> 
+    </li>
+  <% end %>
+</ul>
+<% else %>
+<p>There are no lessons yet!</p>
+<% end %>
+
+<p> <%= link_to "Add a lesson", new_syllabus_lesson_path(@syllabus) %>
+<p> <%= link_to "update", edit_syllabus_path(@syllabus) %> </p>
+
+<p> <%= link_to "delete", syllabus_path(@syllabus), :data => {:confirm => "You sure?", :method => "delete"} %> </p>

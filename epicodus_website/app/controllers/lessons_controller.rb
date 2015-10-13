@@ -5,24 +5,28 @@ class LessonsController < ApplicationController
   end
 
   def new
-    @lesson = Lesson.new
+    @syllabus = Syllabus.find(params[:syllabus_id])
+    @lesson = @syllabus.lessons.new
   end
 
   def create
-    @lesson = Lesson.new(lesson_params)
+    @syllabus = Syllabus.find(params[:syllabus_id])
+    @lesson = @syllabus.lessons.new(lesson_params)
     if @lesson.save
-      redirect_to lessons_path
+      redirect_to syllabuses_path(@lesson.syllabus)
    else
      render :new
     end
   end
 
   def show
+    @syllabus = Syllabus.find(params[:syllabus_id])
     @lesson = Lesson.find(params[:id])
   end
 
   def edit
-    @lesson = Lesson.find(params[:id])
+    @syllabus = Syllabus.find(params[:syllabus_id])
+    @lesson = @syllabus.lessons.find(params[:id])
   end
 
   def update

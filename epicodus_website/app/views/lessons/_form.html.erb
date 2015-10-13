@@ -1,0 +1,8 @@
+
+
+<%= form_for [@lesson, @syllabus] do |q| %>
+  <%= q.text_field :name, placeholder: "Lesson Name" %> <br><br>
+  <%= q.label :content %> <br>
+  <%= q.text_area :content, size: "120x20"%> <br><br>
+  <%= q.submit %>
+<% end %>

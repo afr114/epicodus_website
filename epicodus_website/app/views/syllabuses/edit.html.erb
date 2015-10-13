@@ -1,0 +1,16 @@
+<h1> Update Syllabus </h1>
+
+<% if @syllabus.errors.any? %>
+<h3>Please fix these errors:</h3>
+
+<ul>
+ <%  @syllabus.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+</ul>
+<% end %>
+
+  <%= form_for @syllabus do |q| %>
+    <%= q.text_field :name, placeholder: "Syllabus Name" %> <br><br>
+    <%= q.submit %>
+  <% end %>
